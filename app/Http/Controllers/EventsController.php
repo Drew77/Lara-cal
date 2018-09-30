@@ -83,7 +83,7 @@ class EventsController extends Controller
         $end_date->modify("+ 41days");
         foreach ($all_events as $event){
             $event_date = strtotime($event->date_on);
-            if ($event_date > $first_displayed->getTimestamp() and $event_date < $end_date->getTimestamp()  ){
+            if ($event_date >= $first_displayed->getTimestamp() and $event_date < $end_date->getTimestamp()  ){
                  $current_events[] = $event;
              }
         }
